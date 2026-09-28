@@ -1,0 +1,653 @@
+{
+  "Metadata": {
+    "title": "LiveDocs — Write together, in real time",
+    "description": "LiveDocs is a real-time collaborative document editor. Write, comment, and share with your team the moment ideas happen — no refresh, no version conflicts.",
+    "ogAlt": "LiveDocs product dashboard showing a shared document with live collaborator cursors"
+  },
+  "Landing": {
+    "nav": {
+      "product": "Product",
+      "resources": "Resources",
+      "useCases": "Use cases",
+      "login": "Log in",
+      "openDashboard": "Dashboard",
+      "getStarted": "Get started",
+      "openMenu": "Open menu",
+      "closeMenu": "Close menu",
+      "productItems": {
+        "cursors": "Live cursors",
+        "comments": "Threaded comments",
+        "access": "Sharing & roles",
+        "dashboard": "Dashboard"
+      },
+      "resourceItems": {
+        "how": "How it works",
+        "privacy": "Privacy & access",
+        "stack": "What it's built on"
+      }
+    },
+    "hero": {
+      "title1": "Write together,",
+      "title2": "not in turns",
+      "subtitle": "LiveDocs is a real-time document editor. See every cursor as it moves, leave comments right where the idea is, and decide exactly who can edit or only read.",
+      "ctaPrimary": "Get started",
+      "ctaSecondary": "See how it works"
+    },
+    "mock": {
+      "docTitle": "Q4 product brief",
+      "saved": "Saved",
+      "share": "Share",
+      "online": "3 online",
+      "role": "Editor",
+      "autosave": "Autosave on",
+      "commentsTitle": "Comments",
+      "resolved": "Resolved",
+      "p1a": "We're shipping the new onboarding in October. The goal is simple: a new teammate should ",
+      "hl": "write their first doc in under two minutes",
+      "p1b": ".",
+      "p2": "Open questions: the pricing copy, the empty state, and who owns the migration checklist.",
+      "p3": "Owner for migration: ",
+      "bubble": "Nice, this reads much clearer.",
+      "threads": [
+        {
+          "name": "Sari",
+          "time": "2m",
+          "text": "Two minutes feels tight. Can we test it with five new hires first?"
+        },
+        {
+          "name": "Budi",
+          "time": "1m",
+          "text": "@Sari agreed, I'll set up the test this week."
+        },
+        {
+          "name": "Anya",
+          "time": "1h",
+          "text": "Typo in the intro is fixed."
+        }
+      ],
+      "reply": "Reply…"
+    },
+    "trust": {
+      "titleStart": "Your team's ",
+      "titleEm": "new",
+      "titleEnd": " place to think out loud",
+      "kicker": "Built on tools engineers already trust"
+    },
+    "dashboard": {
+      "badge": "Dashboard",
+      "title": "Every document, one calm dashboard",
+      "body": "Search, filter and sort everything you own or were invited to, then jump back into the live room with one click.",
+      "docs": [
+        {
+          "title": "Q4 product brief",
+          "meta": "3 collaborators · edited 2 min ago"
+        },
+        {
+          "title": "Sprint retro notes",
+          "meta": "5 collaborators · edited yesterday"
+        },
+        {
+          "title": "Launch checklist",
+          "meta": "2 collaborators · edited 3 days ago"
+        },
+        {
+          "title": "Thesis outline, draft 3",
+          "meta": "Only you · edited last week"
+        },
+        {
+          "title": "Client proposal",
+          "meta": "Viewer access · shared by Anya"
+        },
+        {
+          "title": "Weekly sync notes",
+          "meta": "4 collaborators · edited today"
+        }
+      ]
+    },
+    "access": {
+      "title": "Every role, every language, every mood",
+      "body": "Invite people as editors or viewers, switch between English and Bahasa Indonesia, and pick light or dark. Try the controls in the frame below, they really work."
+    },
+    "comments": {
+      "badge": "Comments",
+      "titleStart": "Comments that stay ",
+      "titleEm": "attached",
+      "titleEnd": " to the idea",
+      "body": "Select any text, start a thread, mention a teammate. Replies, resolves and notifications all happen without leaving the page."
+    },
+    "big": {
+      "leftTitle": "Never ask “is this the latest version?” again",
+      "leftBody": "There's only one version: the one everyone is editing right now. Changes sync as they happen, so nothing gets emailed, renamed “final_v3”, or overwritten.",
+      "badge": "Platform",
+      "kicker": "Your team's new workspace",
+      "word": "Together"
+    },
+    "features": {
+      "cta": "Try it",
+      "items": [
+        {
+          "title": "Live cursors & presence",
+          "body": "See who's in the document and exactly where they're typing, so you never overwrite each other."
+        },
+        {
+          "title": "Threaded comments",
+          "body": "Start a conversation on any selection, reply in a thread, and resolve it when it's done."
+        },
+        {
+          "title": "Editor or viewer, per person",
+          "body": "Invite by email, choose what each person can do, and change it or revoke it any time."
+        },
+        {
+          "title": "Mentions and an inbox",
+          "body": "@mention a teammate and it lands in their notifications, together with new shares."
+        },
+        {
+          "title": "Two languages, two themes",
+          "body": "The whole app speaks English and Bahasa Indonesia, in light or dark, your choice."
+        },
+        {
+          "title": "Private by default",
+          "body": "New documents are visible only to you. Sign-in runs on Auth.js and access is checked per document."
+        }
+      ],
+      "mock": {
+        "mentioned": "mentioned you",
+        "shared": "shared “Launch checklist” with you",
+        "editor": "Editor",
+        "viewer": "Viewer",
+        "only": "Only you",
+        "invite": "Invite by email"
+      }
+    },
+    "useCases": {
+      "badge": "Use cases",
+      "title": "Made for how people actually write",
+      "items": [
+        {
+          "label": "For product & engineering teams",
+          "statement": "Write the spec once. Everyone reads the same version.",
+          "chips": [
+            "Live cursors",
+            "Threaded comments",
+            "Editor or viewer"
+          ]
+        },
+        {
+          "label": "For students & study groups",
+          "statement": "Split up the report, not the group chat.",
+          "chips": [
+            "Real-time editing",
+            "@mentions",
+            "English & Bahasa Indonesia"
+          ]
+        },
+        {
+          "label": "For freelancers & agencies",
+          "statement": "Share a draft with a client, read-only, and take it back whenever you want.",
+          "chips": [
+            "Viewer access",
+            "Revoke in a click",
+            "Private by default"
+          ]
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Get started",
+      "title": "Up and writing in three steps",
+      "items": [
+        {
+          "title": "Create your account",
+          "body": "Sign up in a few seconds. No install, no credit card."
+        },
+        {
+          "title": "Start a document",
+          "body": "Hit New Document. It opens as a live room that only you can see."
+        },
+        {
+          "title": "Invite your team",
+          "body": "Add teammates by email as editors or viewers. They get a notification right away."
+        }
+      ],
+      "rows": [
+        {
+          "title": "You decide who's in",
+          "body": "Invite by email as an editor or a viewer, change roles at any time, and remove access with one click.",
+          "link": "See how sharing works"
+        },
+        {
+          "title": "Private by default",
+          "body": "A new document is visible only to you. Sign-in runs on Auth.js and real-time sync runs on Liveblocks.",
+          "link": "See what it's built on"
+        }
+      ],
+      "ctaPrimary": "Create your first document",
+      "ctaSecondary": "Log in"
+    },
+    "footer": {
+      "tagline": "Real-time documents for teams that think out loud.",
+      "product": "Product",
+      "resources": "Resources",
+      "account": "Account",
+      "signIn": "Sign in",
+      "signUp": "Sign up",
+      "documents": "Your documents",
+      "rights": "All rights reserved.",
+      "credits": "Paintings are in the public domain, via Wikimedia Commons. Photos from Pexels.",
+      "creditsLabel": "Artwork credits",
+      "privacyLink": "Privacy",
+      "termsLink": "Terms"
+    }
+  },
+  "Theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System",
+    "toggle": "Toggle theme"
+  },
+  "Language": {
+    "label": "Language",
+    "en": "English",
+    "id": "Indonesian"
+  },
+  "Dashboard": {
+    "documentsSuffix": "Documents",
+    "search": "Search documents",
+    "newDocument": "New document",
+    "sortRecent": "Most recent",
+    "sortOldest": "Oldest first",
+    "sortName": "Name",
+    "dateAll": "All time",
+    "dateToday": "Today",
+    "dateWeek": "This week",
+    "dateMonth": "This month",
+    "dateYear": "This year",
+    "open": "Open",
+    "empty": "No documents yet",
+    "emptySubtitle": "Create your first document to start collaborating in real time.",
+    "createDocument": "Create a document",
+    "deleting": "Deleting...",
+    "delete": "Delete",
+    "creating": "Creating...",
+    "sortPlaceholder": "Sort by",
+    "datePlaceholder": "Date",
+    "filterButton": "Filter",
+    "scopeLabel": "Scope",
+    "scopeAll": "All",
+    "scopeMine": "My documents",
+    "scopeShared": "Shared with me",
+    "roleOwner": "Owner",
+    "roleEditor": "Editor",
+    "roleViewer": "Viewer",
+    "menuRename": "Rename",
+    "renameTitle": "Rename document",
+    "renameSave": "Save",
+    "renameCancel": "Cancel",
+    "renamed": "Renamed.",
+    "searchEmpty": "No matching documents",
+    "searchEmptySubtitle": "Try a different search or clear your filters.",
+    "clearFilters": "Clear filters",
+    "errorTitle": "Couldn't load your documents",
+    "errorSubtitle": "Something went wrong on our end.",
+    "retry": "Try again",
+    "chooseIcon": "Choose an icon",
+    "deleted": "Deleted permanently.",
+    "restore": "Restore",
+    "deleteForever": "Delete forever",
+    "movedToTrash": "Moved to trash.",
+    "restored": "Restored.",
+    "scopeStarred": "Pinned",
+    "scopeTrash": "Trash",
+    "recentlyOpened": "Recently opened",
+    "trashEmpty": "Trash is empty",
+    "trashEmptySubtitle": "Documents you delete show up here for 30 days before being removed for good.",
+    "viewGrid": "Grid view",
+    "viewList": "List view",
+    "loadMore": "Load more",
+    "loadingMore": "Loading...",
+    "fromTemplate": "New from template",
+    "template_meeting-notes": "Meeting notes",
+    "template_meeting-notes_desc": "Attendees, agenda, decisions, follow-ups",
+    "template_project-brief": "Project brief",
+    "template_project-brief_desc": "Background, goals, scope, timeline",
+    "template_weekly-report": "Weekly report",
+    "template_weekly-report_desc": "Summary, progress, blockers, next week",
+    "duplicate": "Duplicate",
+    "duplicated": "Document duplicated.",
+    "copySuffix": "(copy)",
+    "welcomeKicker": "Your workspace",
+    "welcome": "Welcome back, {name}",
+    "welcomeSub": "Pick up where you left off, or start something new with your team.",
+    "statTotal": "Documents",
+    "statShared": "Shared with you",
+    "statStarred": "Pinned",
+    "pin": "Pin",
+    "unpin": "Unpin"
+  },
+  "DeleteModal": {
+    "title": "Delete document",
+    "description": "This moves the document to trash. You (or anyone you shared it with as owner) can restore it within 30 days.",
+    "cancel": "Cancel",
+    "deleted": "Moved to trash."
+  },
+  "Editor": {
+    "enterTitle": "Enter title",
+    "viewOnly": "View only",
+    "saving": "saving...",
+    "placeholder": "Start writing...",
+    "editTitle": "Edit title",
+    "activeCollaborators": "People viewing this document",
+    "outlineTitle": "Outline",
+    "outlineEmpty": "Add headings to see an outline here.",
+    "shortcutsTitle": "Keyboard shortcuts",
+    "shortcutsHint": "Press ? to open this anytime",
+    "slashHint": "Type / for commands",
+    "accessDeniedTitle": "You don't have access to this document",
+    "accessDeniedSubtitle": "Ask the owner to share it with your email, or go back to your documents.",
+    "backToDocuments": "Back to documents",
+    "shortcutBold": "Bold",
+    "shortcutItalic": "Italic",
+    "shortcutUnderline": "Underline",
+    "shortcutUndo": "Undo",
+    "shortcutRedo": "Redo",
+    "shortcutSlash": "Insert block (heading, quote...)",
+    "shortcutHelp": "Open this help",
+    "exportMarkdown": "Export as Markdown",
+    "exportPdf": "Export as PDF (print)",
+    "versionHistoryTitle": "Version history",
+    "versionHistoryNote": "Versions are kept for 24 hours on the current plan.",
+    "versionHistoryEmpty": "No earlier versions yet.",
+    "versionRestore": "Restore this version",
+    "versionRestored": "Version restored.",
+    "versionRestoreError": "Couldn't restore this version.",
+    "aiAssistTitle": "AI assistant",
+    "aiNoSelection": "Select some text first.",
+    "aiAction_summarize": "Summarize",
+    "aiAction_fix_grammar": "Fix grammar",
+    "aiAction_continue_writing": "Continue writing",
+    "aiAction_change_tone": "Make more professional",
+    "toolbarLabel": "Formatting toolbar",
+    "toolbarUndo": "Undo",
+    "toolbarRedo": "Redo",
+    "toolbarH1": "Heading 1",
+    "toolbarH2": "Heading 2",
+    "toolbarH3": "Heading 3",
+    "toolbarBulletList": "Bulleted list",
+    "toolbarNumberedList": "Numbered list",
+    "toolbarBold": "Bold",
+    "toolbarItalic": "Italic",
+    "toolbarUnderline": "Underline",
+    "toolbarStrike": "Strikethrough",
+    "toolbarAlignLeft": "Align left",
+    "toolbarAlignCenter": "Align center",
+    "toolbarAlignRight": "Align right",
+    "toolbarAlignJustify": "Justify"
+  },
+  "Auth": {
+    "signInTitle": "Sign in",
+    "signUpTitle": "Sign up",
+    "nameLabel": "Name",
+    "namePlaceholder": "Full name",
+    "emailLabel": "Email",
+    "emailPlaceholder": "you@email.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "At least 15 characters",
+    "signInButton": "Sign in",
+    "signUpButton": "Sign up",
+    "signInLoading": "Signing in...",
+    "signUpLoading": "Creating account...",
+    "newHereTitle": "New here?",
+    "newHereBody": "Join now and start building collaborative docs with your team.",
+    "newHereCta": "Sign up",
+    "oneOfUsTitle": "Already have an account?",
+    "oneOfUsBody": "Welcome back — pick up where you left off.",
+    "oneOfUsCta": "Sign in",
+    "errorInvalidCredentials": "Incorrect email or password, or your email isn't verified yet. Too many attempts can pause sign-in for a while — try again later or reset your password.",
+    "errorGeneric": "Something went wrong. Please try again.",
+    "errorRateLimited": "Too many attempts. Please try again later.",
+    "forgotPasswordLink": "Forgot password?",
+    "checkEmailNotice": "If {email} can be used to create an account, we've sent a verification link. Check your inbox (and spam folder) — it expires in 24 hours.",
+    "forgotTitle": "Forgot password",
+    "forgotBody": "Enter your email and we'll send you a link to reset your password.",
+    "forgotSent": "If an account exists for that email, a reset link is on its way. It expires in 1 hour.",
+    "forgotButton": "Send reset link",
+    "forgotLoading": "Sending...",
+    "backToSignIn": "Back to sign in",
+    "resetTitle": "Choose a new password",
+    "resetBody": "Use at least {min} characters. A long passphrase is easier to remember and stronger than a short complex password.",
+    "newPasswordLabel": "New password",
+    "confirmPasswordLabel": "Confirm new password",
+    "resetButton": "Update password",
+    "resetLoading": "Updating...",
+    "resetDone": "Your password was updated and all other sessions were signed out. Sign in with your new password.",
+    "verifyTitle": "Verify your email",
+    "verifyBody": "Confirm your email address to finish creating your account.",
+    "verifyButton": "Verify email",
+    "verifyLoading": "Verifying...",
+    "verifyDone": "Your email is verified. You can sign in now.",
+    "validation": {
+      "email_invalid": "Enter a valid email address.",
+      "password_too_short": "Password must be at least 15 characters.",
+      "password_too_long": "Password is too long (max 128 characters).",
+      "password_required": "Enter your password.",
+      "password_blocklisted": "That password is too easy to guess. Choose a different one.",
+      "password_contains_identity": "Your password can't contain your email name or the app name.",
+      "password_breached": "That password appears in known data breaches. Please choose a different one.",
+      "password_mismatch": "The two passwords don't match.",
+      "name_too_short": "Enter your name (at least 2 characters).",
+      "name_too_long": "Name is too long (max 80 characters).",
+      "token_invalid": "This link is invalid or has expired.",
+      "rate_limited": "Too many attempts. Please try again later.",
+      "invalid_input": "Something is missing or invalid. Please check the form.",
+      "forbidden": "This request was blocked. Please reload the page and try again."
+    },
+    "signOut": "Sign out",
+    "account": "Account",
+    "passwordSignInPlaceholder": "Your password",
+    "accountSettings": "Account settings"
+  },
+  "Errors": {
+    "unauthorized": "Please sign in again to continue.",
+    "forbidden": "You don't have permission to do that.",
+    "not_found": "We couldn't find that document.",
+    "invalid_input": "That doesn't look right. Please check it and try again.",
+    "rate_limited": "Too many attempts. Please wait a moment and try again.",
+    "quota_exceeded": "You've reached a limit for this action.",
+    "conflict": "That conflicts with the current state. Please refresh and try again.",
+    "server_error": "Something went wrong. Please try again.",
+    "ai_unavailable": "The AI assistant isn't available right now."
+  },
+  "Share": {
+    "trigger": "Share",
+    "title": "Manage who can view this project",
+    "description": "Select which users can view and edit this document",
+    "emailLabel": "Email address",
+    "emailPlaceholder": "Enter email address",
+    "emailInvalid": "Enter a valid email address.",
+    "invite": "Invite",
+    "inviting": "Sending...",
+    "invited": "Invited {email}.",
+    "removed": "Removed {email}.",
+    "canView": "can view",
+    "canEdit": "can edit",
+    "accessLevel": "Access level",
+    "owner": "Owner",
+    "remove": "Remove",
+    "updating": "updating...",
+    "publicAccessTitle": "Anyone with an account",
+    "publicAccessDescription": "Signed-in LiveDocs users with this link can view (read-only). They still need to log in.",
+    "publicOn": "Anyone with an account can now view this link.",
+    "publicOff": "Public view link turned off."
+  },
+  "Notifications": {
+    "title": "Notifications",
+    "unread": "{count} unread notifications",
+    "empty": "No new notifications",
+    "mentionedYou": "mentioned you.",
+    "accessGranted": "{name} gave you {type} access to a document.",
+    "editor": "edit",
+    "viewer": "view-only",
+    "markAllRead": "Mark all as read"
+  },
+  "ErrorPage": {
+    "title": "Something went wrong",
+    "body": "An unexpected error occurred. You can try again.",
+    "retry": "Try again",
+    "home": "Back to home"
+  },
+  "NotFound": {
+    "title": "Page not found",
+    "body": "The page you're looking for doesn't exist or has moved.",
+    "home": "Back to home"
+  },
+  "Legal": {
+    "back": "Back to home",
+    "updated": "Last updated: {date}",
+    "contact": "Questions? Contact us at {email}.",
+    "privacy": {
+      "title": "Privacy Policy",
+      "description": "How LiveDocs collects, uses, and protects your data.",
+      "sections": [
+        {
+          "heading": "What this policy covers",
+          "body": [
+            "LiveDocs is a real-time collaborative document editor. This policy explains what personal data we process when you use it, why, and what choices you have."
+          ]
+        },
+        {
+          "heading": "Data we process",
+          "body": [
+            "Account data: your name, email address, and a hashed password (we never store your password in plain text).",
+            "Content you create: documents, comments, and the list of email addresses you share them with.",
+            "Technical data: IP address and request metadata used for security (rate limiting, abuse prevention) and error reports used to fix bugs."
+          ]
+        },
+        {
+          "heading": "Why we use it",
+          "body": [
+            "To provide the service: sign you in, sync documents in real time, and deliver invitations and notifications.",
+            "To keep the service safe: limit repeated login attempts and detect abuse.",
+            "To send transactional emails only: email verification, password reset, and security notices. We do not send marketing email."
+          ]
+        },
+        {
+          "heading": "Service providers",
+          "body": [
+            "We use trusted providers to run LiveDocs: Liveblocks (real-time collaboration and document storage), MongoDB (account database), an email delivery provider (transactional email), Sentry (error monitoring, configured without personal data by default), and our hosting provider. They process data on our behalf and only for these purposes."
+          ]
+        },
+        {
+          "heading": "Cookies",
+          "body": [
+            "We use only strictly necessary cookies and storage: a session cookie that keeps you signed in, and your theme and language preferences. We do not use advertising or cross-site tracking cookies."
+          ]
+        },
+        {
+          "heading": "Retention and deletion",
+          "body": [
+            "We keep your account and documents until you ask us to delete them. Unverified sign-ups expire after 24 hours and password reset links after 1 hour."
+          ]
+        },
+        {
+          "heading": "Your rights",
+          "body": [
+            "You can ask to access, correct, export, or delete your personal data at any time. Depending on where you live, you may also have the right to object to or restrict certain processing."
+          ]
+        },
+        {
+          "heading": "Security",
+          "body": [
+            "We protect your data with encryption in transit (HTTPS), modern password hashing (Argon2id), access controls on every document, and rate limiting. No system is perfectly secure, so please use a strong, unique password."
+          ]
+        },
+        {
+          "heading": "Changes",
+          "body": [
+            "We may update this policy. When we make material changes we will update the date above."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Terms of Service",
+      "description": "The rules for using LiveDocs.",
+      "sections": [
+        {
+          "heading": "Acceptance",
+          "body": [
+            "By creating an account or using LiveDocs you agree to these terms. If you don't agree, please don't use the service."
+          ]
+        },
+        {
+          "heading": "Your account",
+          "body": [
+            "Provide accurate information, verify your email, and keep your password secret. You are responsible for activity under your account. Tell us promptly if you suspect unauthorized access."
+          ]
+        },
+        {
+          "heading": "Your content",
+          "body": [
+            "You own the documents and comments you create. You give us permission to host, process, and display them only as needed to run the service. You decide who can view or edit each document; you are responsible for the people you share it with."
+          ]
+        },
+        {
+          "heading": "Acceptable use",
+          "body": [
+            "Do not use LiveDocs to break the law, infringe others' rights, distribute malware, or harass others. Do not attempt to bypass security or rate limits, probe other users' accounts, or disrupt the service."
+          ]
+        },
+        {
+          "heading": "Availability",
+          "body": [
+            "We work to keep LiveDocs available and your data safe, but the service is provided \"as is\" without guarantees of uninterrupted operation. Keep your own backups of important documents."
+          ]
+        },
+        {
+          "heading": "Termination",
+          "body": [
+            "You can stop using LiveDocs and ask us to delete your account at any time. We may suspend accounts that violate these terms."
+          ]
+        },
+        {
+          "heading": "Limitation of liability",
+          "body": [
+            "To the maximum extent permitted by law, LiveDocs is not liable for indirect or consequential losses arising from your use of the service."
+          ]
+        },
+        {
+          "heading": "Changes",
+          "body": [
+            "We may update these terms. Continuing to use LiveDocs after an update means you accept the new terms."
+          ]
+        }
+      ]
+    }
+  },
+  "Account": {
+    "title": "Account settings",
+    "backToDocuments": "Back to documents",
+    "profileTitle": "Profile",
+    "save": "Save",
+    "profileSaved": "Name updated.",
+    "passwordTitle": "Password",
+    "passwordNote": "Changing your password signs you out of this device too — you'll need to sign in again.",
+    "currentPassword": "Current password",
+    "newPassword": "New password",
+    "changePassword": "Change password",
+    "passwordChanged": "Password changed. Please sign in again.",
+    "logoutAllTitle": "Sign out everywhere",
+    "logoutAllNote": "Sign out of every device, including this one.",
+    "logoutAllButton": "Sign out of all devices",
+    "deleteTitle": "Delete account",
+    "deleteNote": "Permanently deletes your account and every document you own. This can't be undone.",
+    "deleteButton": "Delete my account",
+    "deleteConfirmTitle": "Delete your account?",
+    "deleteConfirmBody": "This permanently deletes your account and every document you own. Enter your password to confirm.",
+    "deleteCancel": "Cancel",
+    "deleteConfirmButton": "Delete permanently"
+  },
+  "Common": {
+    "close": "Close",
+    "loading": "Loading"
+  }
+}

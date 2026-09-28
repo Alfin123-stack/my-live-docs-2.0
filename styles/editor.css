@@ -1,0 +1,231 @@
+/* ==========================================================================
+   Editor (Lexical) — toolbar & gaya konten.
+
+   File ini MENAMBAHKAN gaya yang sebelumnya tidak ada di proyek: kelas
+   `.toolbar`, `.toolbar-item`, `i.format.*`, `.divider`, `.editor-*` dipakai oleh
+   ToolbarPlugin / Theme.ts, tetapi tidak terdefinisi di CSS mana pun — akibatnya
+   ikon toolbar tidak tampil dan bold/italic/heading tidak bergaya.
+   Semua warna memakai token Adora sehingga otomatis benar di light/dark mode.
+   ========================================================================== */
+
+/* ---------- Toolbar ---------- */
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  min-width: max-content;
+  padding: 6px 0;
+}
+
+.toolbar-item {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 36px;
+  min-width: 36px;
+  padding: 0 6px;
+  border: 0;
+  border-radius: var(--radius-control);
+  background: transparent;
+  color: var(--text-body);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.toolbar-item:hover:not(:disabled) {
+  background: var(--surface-recessed-surface);
+}
+
+.toolbar-item.active {
+  background: color-mix(in srgb, var(--color-action) 14%, transparent);
+  color: var(--color-violet-ink);
+}
+
+.toolbar-item:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.toolbar-item:focus-visible {
+  outline: 2px solid var(--color-electric-violet);
+  outline-offset: -2px;
+}
+
+.toolbar .divider {
+  width: 1px;
+  height: 20px;
+  margin: 0 6px;
+  background: var(--border-hairline);
+  flex-shrink: 0;
+}
+
+/* Ikon dirender lewat mask + currentColor → mengikuti warna teks/tema. */
+i.format {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  background-color: currentColor;
+  -webkit-mask: var(--icon) center / contain no-repeat;
+  mask: var(--icon) center / contain no-repeat;
+}
+
+i.format.undo { --icon: url("/assets/icons/arrow-counterclockwise.svg"); }
+i.format.redo { --icon: url("/assets/icons/arrow-clockwise.svg"); }
+i.format.h1 { --icon: url("/assets/icons/h1.svg"); }
+i.format.h2 { --icon: url("/assets/icons/h2.svg"); }
+i.format.h3 { --icon: url("/assets/icons/h3.svg"); }
+i.format.bullet-list { --icon: url("/assets/icons/list-ul.svg"); }
+i.format.number-list { --icon: url("/assets/icons/list-ol.svg"); }
+i.format.bold { --icon: url("/assets/icons/type-bold.svg"); }
+i.format.italic { --icon: url("/assets/icons/type-italic.svg"); }
+i.format.underline { --icon: url("/assets/icons/type-underline.svg"); }
+i.format.strikethrough { --icon: url("/assets/icons/type-strikethrough.svg"); }
+i.format.left-align { --icon: url("/assets/icons/text-left.svg"); }
+i.format.center-align { --icon: url("/assets/icons/text-center.svg"); }
+i.format.right-align { --icon: url("/assets/icons/text-right.svg"); }
+i.format.justify-align { --icon: url("/assets/icons/justify.svg"); }
+
+/* ---------- Sampul + kertas dokumen ---------- */
+/* Sampul lukisan (sama dengan sampul kartu di dashboard); disembunyikan saat print. */
+.editor-cover {
+  position: relative;
+  height: 88px;
+  overflow: hidden;
+  border-radius: var(--radius-panel);
+  border: 1px solid var(--border-hairline);
+  background: var(--color-midnight-plum);
+}
+
+@media (min-width: 640px) {
+  .editor-cover {
+    height: 132px;
+  }
+}
+
+.editor-inner {
+  background: var(--surface-elevated-card);
+  border: 1px solid var(--border-hairline);
+  border-radius: var(--radius-panel);
+  color: var(--text-body);
+  box-shadow: var(--shadow-soft);
+}
+
+.editor-input {
+  min-height: 100%;
+  padding: 24px 20px;
+  outline: none !important;
+  caret-color: var(--color-violet-ink);
+  font-size: 16px;
+  line-height: 1.7;
+  tab-size: 2;
+  overflow-wrap: anywhere;
+  font-family: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
+}
+
+.editor-input ::selection {
+  background: color-mix(in srgb, var(--color-action) 32%, transparent);
+  color: inherit;
+}
+
+@media (min-width: 640px) {
+  .editor-input {
+    padding: 48px 56px;
+  }
+}
+
+.editor-placeholder {
+  position: absolute;
+  top: 24px;
+  left: 20px;
+  right: 20px;
+  color: var(--text-muted);
+  pointer-events: none;
+  user-select: none;
+}
+
+@media (min-width: 640px) {
+  .editor-placeholder {
+    top: 48px;
+    left: 56px;
+    right: 56px;
+  }
+}
+
+/* ---------- Konten ---------- */
+.editor-paragraph { margin: 0 0 12px; }
+
+.editor-heading-h1,
+.editor-heading-h2,
+.editor-heading-h3 {
+  /* Headline dokumen memakai font display yang sama dengan landing. */
+  font-family: var(--font-polysans);
+  color: var(--text-heading);
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+  margin: 24px 0 12px;
+}
+.editor-heading-h1 { font-size: 2rem; }
+.editor-heading-h2 { font-size: 1.5rem; }
+.editor-heading-h3 { font-size: 1.25rem; }
+
+.editor-quote {
+  margin: 16px 0;
+  padding: 4px 0 4px 16px;
+  border-left: 4px solid var(--color-violet-ink);
+  color: var(--text-muted);
+}
+
+.editor-text-bold { font-weight: 700; }
+.editor-text-italic { font-style: italic; }
+.editor-text-underline { text-decoration: underline; }
+.editor-text-strikethrough { text-decoration: line-through; }
+.editor-text-underlineStrikethrough { text-decoration: underline line-through; }
+
+.editor-text-code,
+.editor-code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  background: var(--surface-recessed-surface);
+  border: 1px solid var(--border-hairline);
+  border-radius: 8px;
+}
+.editor-text-code { padding: 1px 6px; font-size: 0.9em; }
+.editor-code { display: block; padding: 12px 16px; margin: 12px 0; overflow-x: auto; }
+
+.editor-link { color: var(--color-violet-ink); text-decoration: underline; text-underline-offset: 3px; }
+
+.editor-list-ul { list-style: disc; margin: 0 0 12px; padding-left: 24px; }
+.editor-list-ul ::marker,
+.editor-list-ol ::marker { color: var(--color-violet-ink); }
+.editor-list-ol { list-style: decimal; margin: 0 0 12px; padding-left: 24px; }
+.editor-listitem { margin: 4px 0; }
+.editor-nested-listitem { list-style-type: none; }
+
+/* ---------- Tanpa outline focus di editor & kolom komentar ----------
+   Outline ungu dari `:focus-visible` global muncul saat editor mendapat fokus
+   otomatis (AutoFocusPlugin) dan membuat area tulis terlihat seperti kotak.
+   Editor cukup ditandai lewat caret; kolom komentar juga dibiarkan tanpa ring. */
+.editor-input,
+.editor-input:focus,
+.editor-input:focus-visible,
+.editor-input *:focus,
+.editor-input *:focus-visible,
+.editor-inner:focus-within,
+.editor-inner:focus-within *:focus,
+.editor-inner:focus-within *:focus-visible {
+  outline: none !important;
+  box-shadow: none;
+}
+
+.lb-composer:focus-within,
+.lb-composer :focus,
+.lb-composer :focus-visible,
+.lb-thread-composer:focus-within,
+.lb-thread-composer :focus,
+.lb-thread-composer :focus-visible,
+.lb-composer-editor:focus,
+.lb-composer-editor:focus-visible,
+.lb-composer-editor:focus-within {
+  outline: none !important;
+  box-shadow: none !important;
+}

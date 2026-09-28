@@ -1,0 +1,181 @@
+/* ==========================================================================
+   ADORA DESIGN SYSTEM
+   "impressionist museum behind frosted glass"
+   Light mode = tokens exactly as specified in the Adora style reference.
+   Dark mode  = the same palette re-mapped for a dark canvas (violet action
+   color, pastel accents and type scale are kept identical; only surfaces
+   and neutral text swap for contrast).
+   ========================================================================== */
+
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  /* ---- Brand & chromatic ---- */
+  --color-electric-violet: #592eff;
+  --color-midnight-plum: #21164c;
+  --color-obsidian-charcoal: #353241;
+  --color-slate-smoke: #5f5f69;
+  --color-pearl-mist: #e0e0db;
+  --color-soft-concrete: #eeeeee;
+  --color-pure-white: #ffffff;
+
+  /* ---- Decorative pastels (confetti only, never fills/text) ---- */
+  --color-sky-tint: #bcf2ff;
+  --color-lime-spritz: #dfff9d;
+  --color-cotton-candy: #ffaae6;
+
+  /* ---- Badge / accent chromatics ---- */
+  --color-neon-cyan: #2ed6ff;
+  --color-lime-pop: #a2ea13;
+  --color-magenta-pulse: #f843c2;
+
+  /* ---- Semantic surfaces ---- */
+  --surface-page-canvas: #ffffff;
+  --surface-elevated-card: #ffffff;
+  --surface-recessed-surface: #eeeeee;
+  --surface-atmospheric-wash: #bcf2ff;
+
+  /* ---- Semantic text ---- */
+  --text-heading: #21164c;
+  --text-body: #353241;
+  --text-muted: #5f5f69;
+  --text-on-accent: #ffffff;
+
+  /* ---- Borders ---- */
+  --border-hairline: #e0e0db;
+  --border-strong: #353241;
+  --border-focus: #592eff;
+
+  /* ---- Shadows (barely-there, per elevation philosophy) ---- */
+  --shadow-soft: 0 1px 2px rgba(33, 22, 76, 0.04), 0 8px 24px rgba(33, 22, 76, 0.06);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --color-electric-violet: #7c5cff;
+  --color-midnight-plum: #f4f1ff;
+  --color-obsidian-charcoal: #d9d6e8;
+  --color-slate-smoke: #a29dc2;
+  --color-pearl-mist: #352a63;
+  --color-soft-concrete: #201a44;
+  --color-pure-white: #ffffff;
+
+  --color-sky-tint: #17324a;
+  --color-lime-spritz: #253a1f;
+  --color-cotton-candy: #3a1f38;
+
+  --color-neon-cyan: #2ed6ff;
+  --color-lime-pop: #a2ea13;
+  --color-magenta-pulse: #f843c2;
+
+  --surface-page-canvas: #100b25;
+  --surface-elevated-card: #18133a;
+  --surface-recessed-surface: #201a44;
+  --surface-atmospheric-wash: #1c2c46;
+
+  --text-heading: #f4f1ff;
+  --text-body: #d9d6e8;
+  --text-muted: #a29dc2;
+  --text-on-accent: #ffffff;
+
+  --border-hairline: #352a63;
+  --border-strong: #4a3d80;
+  --border-focus: #7c5cff;
+
+  --shadow-soft: 0 1px 2px rgba(0, 0, 0, 0.24), 0 8px 24px rgba(0, 0, 0, 0.32);
+}
+
+/* ---- Typography scale (identical in both modes) ---- */
+:root {
+  /* Font display (headline landing). Schibsted Grotesk = pengganti gratis
+     terdekat untuk PolySans di referensi. Variabel font dipasang di <html>
+     (lihat app/[locale]/layout.tsx) supaya var() ini ter-resolve di :root. */
+  --font-polysans: var(--font-schibsted), var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+
+  --text-caption-size: 14px;
+  --text-body-sm-size: 16px;
+  --text-body-size: 18px;
+  --text-subheading-size: 20px;
+  --text-heading-sm-size: 32px;
+  --text-heading-size: 38px;
+  --text-heading-lg-size: 58px;
+  --text-display-size: 68px;
+
+  --tracking-tight: -0.02em;
+
+  /* ---- Spacing ---- */
+  --spacing-4: 4px;
+  --spacing-8: 8px;
+  --spacing-12: 12px;
+  --spacing-16: 16px;
+  --spacing-20: 20px;
+  --spacing-24: 24px;
+  --spacing-32: 32px;
+  --spacing-40: 40px;
+  --spacing-48: 48px;
+  --spacing-60: 60px;
+  --spacing-100: 100px;
+
+  /* ---- Layout ---- */
+  --page-max-width: 1200px;
+  --section-gap: 80px;
+  --card-padding: 32px;
+  --element-gap: 12px;
+
+  /* ---- Named radii ---- */
+  --radius-cards: 40px;
+  --radius-badges: 200px;
+  --radius-buttons: 8px;
+  --radius-navpill: 40px;
+  --radius-productframe: 64px;
+  --radius-input: 12px;
+}
+
+/* ==========================================================================
+   APP-LAYER TOKENS (dashboard, editor, dialog, menu, toast)
+   Dipakai oleh komponen aplikasi. Landing page tetap memakai token di atas.
+   ========================================================================== */
+
+/* ---- Warna semantik: aksi & bahaya (kontras dicek WCAG AA) ---- */
+:root,
+:root[data-theme="light"] {
+  /* Isi tombol/aksi (teks putih di atasnya ≥ 6.4:1) */
+  --color-action: #592eff;
+  /* Violet sebagai TEKS/ikon di atas kartu (≥ 6.4:1) */
+  --color-violet-ink: #592eff;
+
+  --color-danger: #c81e45;         /* teks/ikon bahaya di atas putih ≥ 5.6:1 */
+  --color-danger-solid: #c81e45;   /* isi tombol bahaya, teks putih ≥ 5.6:1 */
+  --color-danger-soft: #fde8ee;    /* latar lembut untuk hover/alert */
+
+  --overlay: rgba(16, 11, 37, 0.55);
+
+  /* Sampul dokumen: tetap sama di light & dark (bukan token yang berbalik) */
+  --cover-violet: #592eff;
+  --cover-plum: #21164c;
+}
+
+:root[data-theme="dark"] {
+  /* Violet dasar (#7c5cff) hanya 4.35:1 dengan teks putih → isi tombol dibuat sedikit lebih gelap. */
+  --color-action: #6d4bff;
+  /* Violet sebagai teks di atas kartu gelap: 6.9:1 (dasar #7c5cff hanya 4.05:1). */
+  --color-violet-ink: #a892ff;
+
+  --color-danger: #ff7b96;
+  --color-danger-solid: #d62f58;
+  --color-danger-soft: #3a1626;
+
+  --overlay: rgba(6, 3, 20, 0.7);
+}
+
+:root {
+  --color-on-danger: #ffffff;
+
+  /* ---- Radius untuk lapisan aplikasi (lebih kecil dari 40px milik landing) ---- */
+  --radius-panel: 24px;    /* kartu/panel dashboard, editor, pengaturan */
+  --radius-dialog: 24px;   /* dialog/modal */
+  --radius-popover: 16px;  /* dropdown, popover, select, toast */
+  --radius-control: 10px;  /* tombol (sama dengan tombol landing) */
+}

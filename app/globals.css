@@ -1,0 +1,456 @@
+@import '@liveblocks/react-ui/styles.css';
+@import '@liveblocks/react-lexical/styles.css';
+
+@import '../styles/adora-theme.css';
+@import '../styles/editor.css';
+@import '../styles/print.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ========================================== BASE */
+@layer base {
+  :root {
+    margin: 0;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  /* Fokus keyboard selalu terlihat (komponen tertentu boleh menimpa dengan ring sendiri). */
+  :focus-visible {
+    outline: 2px solid var(--color-electric-violet);
+    outline-offset: 2px;
+  }
+
+  body {
+    background-color: var(--surface-page-canvas);
+    color: var(--text-body);
+    font-family: var(--font-plus-jakarta-sans), ui-sans-serif, system-ui, sans-serif;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  ::selection {
+    background-color: var(--color-electric-violet);
+    color: var(--text-on-accent);
+  }
+
+  .custom-scrollbar::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+    border-radius: 50px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb {
+    background: var(--border-hairline);
+    border-radius: 50px;
+  }
+
+  .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+    background: var(--text-muted);
+  }
+}
+
+@layer utilities {
+  /* Kartu/panel standar lapisan aplikasi (dashboard, pengaturan, panel editor). */
+  .surface-panel {
+    @apply rounded-panel border border-hairline bg-card shadow-adora;
+  }
+
+  /* Tombol ikon bulat yang dipakai di header dokumen & dashboard (satu bentuk untuk semua). */
+  .icon-btn {
+    @apply inline-flex size-9 shrink-0 items-center justify-center rounded-full border border-hairline bg-card text-ink-soft transition-colors hover:bg-recessed hover:text-ink focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-violet disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .icon-btn-danger {
+    @apply text-danger hover:bg-danger-soft hover:text-danger;
+  }
+
+  .icon-btn-sm {
+    @apply size-8;
+  }
+
+  /* Tombol bulat DI DALAM kartu grid dokumen. Kartu adalah container query (`cqw`), jadi ukuran
+     tombol mengikuti lebar kartu tetapi dibatasi 28–36px (px, bukan rem) agar tidak pernah
+     membengkak/menyusut ekstrem. Dikecualikan dari aturan target sentuh 40px di bawah. */
+  .icon-btn-card {
+    width: clamp(28px, 9.5cqw, 36px);
+    height: clamp(28px, 9.5cqw, 36px);
+  }
+  .icon-btn-card > svg {
+    width: clamp(14px, 4.6cqw, 16px);
+    height: clamp(14px, 4.6cqw, 16px);
+  }
+
+  /* Badge peran (Owner/Editor/Viewer) di atas sampul kartu grid. */
+  .card-badge {
+    font-size: clamp(10px, 3.3cqw, 12px);
+    line-height: 1.2;
+    padding: 0.32em 0.85em;
+  }
+
+  /* Kartu sempit (2 kolom di HP): pill "Open" disembunyikan supaya footer tidak sesak.
+     Seluruh kartu tetap bisa diklik. */
+  @container (max-width: 199px) {
+    .card-open-pill {
+      display: none;
+    }
+  }
+
+  /* Target sentuh untuk kontrol header yang bukan `.icon-btn` (avatar, tema, bahasa). */
+  .touch-target {
+    flex-shrink: 0;
+  }
+
+  /* Tombol melayang di atas sampul gambar. */
+  .icon-btn-glass {
+    @apply bg-card/90 backdrop-blur;
+  }
+
+  /* Dialog berbagi (ShareModal) */
+  .shad-dialog {
+    @apply w-full max-w-[520px] px-4 py-4 sm:px-7 sm:py-7;
+  }
+
+  .shad-select {
+    @apply w-fit border-none bg-transparent text-ink-soft shadow-none;
+  }
+
+  .shad-select svg {
+    @apply ml-1 mt-1;
+  }
+
+  .shad-select-item {
+    @apply cursor-pointer;
+  }
+
+  .shad-popover {
+    @apply w-[min(460px,calc(100vw-24px))] p-3;
+  }
+
+  .floating-toolbar {
+    @apply flex w-full min-w-max items-center justify-center gap-1 rounded-popover border border-hairline bg-card p-1.5 shadow-adora;
+  }
+
+  .floating-toolbar-btn {
+    @apply relative inline-flex size-8 items-center justify-center whitespace-nowrap rounded-control text-sm font-medium text-ink-soft transition-colors hover:bg-recessed hover:text-ink focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-violet disabled:pointer-events-none disabled:opacity-50;
+  }
+
+  .toolbar-wrapper {
+    @apply z-20 custom-scrollbar w-full shrink-0 overflow-auto border-b border-hairline bg-card pl-3 pr-4;
+  }
+
+  .editor-wrapper {
+    @apply custom-scrollbar min-h-0 flex-1 gap-5 overflow-auto bg-recessed/60 px-3 pt-4 sm:px-5 sm:pt-6 lg:flex-row lg:items-start lg:justify-center xl:gap-10 xl:pt-10;
+  }
+
+  /* Header: dashboard menimpanya dengan kartu; editor memakai garis bawah tipis. */
+  /* Hanya tata letak; latar/border ditentukan konteks (kartu di dashboard, bilah di editor). */
+  .header {
+    @apply flex min-h-[64px] w-full min-w-full flex-wrap items-center justify-between gap-2 py-2 pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] sm:min-h-[72px] sm:flex-nowrap;
+  }
+
+  .collaborative-room .header {
+    @apply border-b border-hairline bg-card;
+  }
+
+  .document-list-empty {
+    @apply flex w-full flex-col items-center justify-center gap-5 rounded-panel border border-hairline bg-card px-6 py-10 text-center sm:px-10;
+  }
+
+  .document-title-input {
+    @apply min-w-[78px] flex-1 border-none bg-transparent px-0 text-left font-display text-base font-bold leading-[24px] tracking-[-0.02em] text-ink shadow-none focus-visible:border-transparent focus-visible:ring-0 focus-visible:ring-offset-0 disabled:text-ink sm:text-xl md:text-center !important;
+  }
+
+  .document-title {
+    @apply line-clamp-1 font-display text-base font-bold leading-[24px] tracking-[-0.02em] text-ink sm:pl-0 sm:text-xl;
+  }
+
+  .view-only-tag {
+    @apply rounded-badges border border-hairline bg-recessed px-2.5 py-0.5 text-xs font-medium text-muted;
+  }
+
+  .collaborators-list {
+    @apply hidden items-center justify-end -space-x-3 overflow-hidden sm:flex;
+  }
+
+  .share-input {
+    @apply h-10 flex-1 rounded-field border border-hairline bg-canvas text-ink-soft focus-visible:ring-0 focus-visible:ring-offset-0 sm:h-11 !important;
+  }
+
+  .comments-container {
+    @apply mb-10 flex w-full flex-col items-center justify-center space-y-4 lg:w-fit;
+  }
+
+  .comment-composer {
+    @apply w-full max-w-[800px] rounded-panel border border-hairline bg-card shadow-adora lg:w-[350px];
+  }
+
+  .comment-thread {
+    @apply w-full max-w-[800px] rounded-panel border border-hairline bg-card shadow-adora transition-all lg:w-[350px];
+  }
+
+  .loader {
+    @apply flex size-full h-screen items-center justify-center gap-3 text-ink-soft supports-[height:100dvh]:h-dvh;
+  }
+
+  /* ======================== Auth Pages */
+  .auth-page {
+    @apply relative flex min-h-screen w-full flex-col items-center justify-center gap-8 overflow-hidden bg-painterly bg-canvas px-5 py-16 supports-[height:100dvh]:min-h-dvh;
+  }
+
+  /* ======================== CollaborativeRoom */
+  .collaborative-room {
+    @apply flex h-screen max-h-screen w-full flex-col items-center overflow-hidden bg-canvas supports-[height:100dvh]:h-dvh supports-[height:100dvh]:max-h-dvh;
+  }
+
+  /* ======================== Landing page building blocks */
+  .tag-badge {
+    @apply inline-flex items-center rounded-badges border px-3 py-1.5 text-caption font-medium;
+  }
+
+  .animate-float {
+    animation: doodle-float 6s ease-in-out infinite;
+  }
+
+  .animate-float-delayed {
+    animation: doodle-float 6s ease-in-out infinite;
+    animation-delay: 1.5s;
+  }
+}
+
+/* Animasi masuk halaman untuk server component (error/404/legal) — CSS murni supaya
+   tidak perlu mengubah komponen jadi client hanya demi framer-motion. Easing sama dengan
+   landing/dashboard ([0.22, 1, 0.36, 1]). */
+@keyframes page-enter {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.page-enter {
+  animation: page-enter 0.4s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-enter {
+    animation: none;
+  }
+}
+
+/* ========================================== LANDING */
+.washi {
+  filter: drop-shadow(0 1px 1px rgba(33, 22, 76, 0.08));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-float,
+  .animate-float-delayed {
+    animation: none;
+  }
+}
+
+@keyframes doodle-float {
+  0%, 100% {
+    transform: translateY(0) rotate(0deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(-3deg);
+  }
+}
+
+/* ======================== Liveblocks (komentar, mention, notifikasi)
+   Liveblocks hanya mengirim tema TERANG. Semua variabelnya dipetakan ke token Adora,
+   sehingga otomatis mengikuti light/dark lewat `data-theme`. */
+.lb-root {
+  --lb-accent: var(--color-action);
+  --lb-accent-foreground: var(--text-on-accent);
+  --lb-accent-subtle: var(--surface-recessed-surface);
+  --lb-destructive: var(--color-danger);
+  --lb-destructive-foreground: var(--color-on-danger);
+  --lb-foreground: var(--text-heading);
+  --lb-foreground-secondary: var(--text-body);
+  --lb-foreground-tertiary: var(--text-muted);
+  --lb-foreground-moderate: var(--text-body);
+  --lb-foreground-subtle: var(--text-muted);
+  --lb-background: var(--surface-elevated-card);
+  --lb-dynamic-background: var(--surface-elevated-card);
+  --lb-radius: 10px;
+  --lb-elevation-shadow: var(--shadow-soft);
+  font-family: inherit;
+}
+
+.lb-comment,
+.lb-thread-comments,
+.lb-composer,
+.lb-comment-reaction {
+  background-color: var(--surface-elevated-card);
+  color: var(--text-body);
+}
+
+.lb-button:where([data-variant='primary']) {
+  background-color: var(--color-action);
+  color: var(--text-on-accent);
+  padding: 8px;
+}
+
+.lb-button:where(
+    [data-variant='default']:not(
+        :is(
+            :enabled:hover,
+            :enabled:focus-visible,
+            [aria-expanded='true'],
+            [aria-selected='true']
+          )
+      )
+  ) {
+  color: var(--color-violet-ink);
+}
+
+.lb-button:where(
+    :enabled:hover,
+    :enabled:focus-visible,
+    [aria-expanded='true'],
+    [aria-selected='true']
+  ) {
+  --lb-button-background: var(--surface-recessed-surface);
+  color: var(--color-violet-ink);
+}
+
+.lb-inbox-notification-list-item:where(:not(:last-of-type)) {
+  border-bottom: none;
+}
+
+.lb-comment-body,
+.lb-dropdown-item,
+.lb-dropdown-item-icon,
+.lb-composer-editor {
+  color: var(--text-body);
+}
+
+.lb-composer-action {
+  padding: 8px;
+}
+
+.lb-comment-content {
+  background: var(--surface-recessed-surface);
+  margin-top: 16px;
+  padding: 12px;
+  border-radius: 12px;
+  font-size: 14px;
+}
+
+.lb-comment-date,
+.lb-lexical-mention-suggestion-user,
+.lb-composer-suggestions-list-item,
+.lb-inbox-notification-date,
+.lb-comment-author,
+.lb-emoji-picker-search-icon,
+.lb-emoji-picker-category-header-title,
+.lb-emoji-picker-search::placeholder {
+  color: var(--text-muted);
+}
+
+.lb-comment-author {
+  font-weight: 600;
+  color: var(--text-heading);
+}
+
+.data-liveblocks-portal {
+  color: var(--text-muted) !important;
+}
+
+.lb-root:where(:not(.lb-root .lb-root)) {
+  --lb-dynamic-background: var(--surface-elevated-card);
+  color: var(--text-body);
+}
+
+.lb-composer-editor :where([data-placeholder]) {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+.lb-lexical-floating-threads-thread:where([data-resolved]) {
+  opacity: 40%;
+}
+
+.lb-elevation {
+  background: var(--surface-elevated-card);
+  border: 1px solid var(--border-hairline);
+}
+
+/* Label kursor kolaborator di editor: pakai font aplikasi, sudut selaras dengan Adora. */
+.lb-lexical-cursor {
+  font-family: inherit;
+}
+
+/* ========================================== TOUCH TARGETS
+   Perangkat sentuh (pointer: coarse) mendapat target minimal 36×36 CSS px
+   (WCAG 2.5.8 AA mensyaratkan 24px). Dipakai 36px (bukan 44px) supaya kontrol tidak tampak
+   raksasa di samping teks di HP; kontrol di dalam kartu grid memakai `.icon-btn-card`. */
+@media (pointer: coarse) {
+  .floating-toolbar-btn,
+  .toolbar-item,
+  .icon-btn:not(.icon-btn-card),
+  .touch-target,
+  .toolbar-wrapper button {
+    min-width: 36px;
+    min-height: 36px;
+  }
+}
+
+/* ---------- Emoji picker (Liveblocks composer) ----------
+   Popover emoji memakai lebar pemicunya (tombol emoji ~28px), sehingga isinya
+   tersusun satu kolom yang sangat sempit. Lebarnya dipaksa ke ukuran layak.
+
+   PENTING: JANGAN sentuh display/grid-template-columns di `.lb-emoji-picker-list`
+   atau turunannya. Struktur asli dari @liveblocks/react-ui (lihat styles.css bawaan)
+   adalah `.lb-emoji-picker-list` berisi campuran `.lb-emoji-picker-category-header`
+   (judul kategori, full-width block) dan `.lb-emoji-picker-row` (baris emoji, sudah
+   flex sendiri) — kalau parent-nya dipaksa jadi CSS grid N-kolom, SETIAP anak
+   (termasuk judul kategori yang seharusnya full-width) ikut terjepit ke satu kolom
+   sempit, membuat teks judul kategori wrap satu-dua huruf per baris. Cukup atur
+   lebar `.lb-emoji-picker` saja — layout internal list/row/emoji biarkan bawaan. */
+[data-radix-popper-content-wrapper]:has(.lb-emoji-picker) {
+  min-width: min(320px, calc(100vw - 24px)) !important;
+  max-width: calc(100vw - 24px) !important;
+}
+
+.lb-emoji-picker {
+  width: min(320px, calc(100vw - 24px)) !important;
+  min-width: min(320px, calc(100vw - 24px)) !important;
+  max-width: calc(100vw - 24px) !important;
+}
+
+/* Header editor di HP: kontrol 34px seragam (tema, bahasa, avatar, pensil, kembali). */
+@media (max-width: 639px) {
+  .collaborative-room .header .icon-btn,
+  .collaborative-room .header .touch-target {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    min-height: 34px;
+  }
+  .collaborative-room .header .icon-btn svg,
+  .collaborative-room .header .touch-target svg {
+    width: 16px;
+    height: 16px;
+  }
+}

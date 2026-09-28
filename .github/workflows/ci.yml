@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    env:
+      # Build tidak butuh secret asli; validasi env production dilewati saat `next build`.
+      NEXT_PUBLIC_SITE_URL: https://example.com
+      NEXT_TELEMETRY_DISABLED: "1"
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      # TODO: setelah package-lock.json di-commit, ganti dengan `npm ci` dan tambahkan `cache: npm`.
+      - run: npm install --no-audit --no-fund
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm test
+      - run: npm run build
+      - name: Audit dependensi produksi
+        run: npm audit --omit=dev --audit-level=high

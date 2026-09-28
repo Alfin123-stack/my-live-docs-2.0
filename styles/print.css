@@ -1,0 +1,51 @@
+/*
+ * Export PDF (Fase 5 #1) memakai window.print() + Save as PDF bawaan browser,
+ * bukan render server-side. Style ini HANYA aktif saat mode print (@media print),
+ * jadi tidak memengaruhi tampilan layar sama sekali.
+ */
+@media print {
+  /* Sembunyikan semua chrome UI: header, toolbar, sidebar komentar, cursor
+     kolaborator, notifikasi, dan dialog apa pun yang kebetulan terbuka. */
+  .header,
+  .editor-cover,
+  .toolbar-wrapper,
+  .comments-container,
+  .lb-lexical-cursors,
+  .lb-lexical-cursor,
+  [data-radix-popper-content-wrapper],
+  [role="dialog"],
+  [role="tablist"] {
+    display: none !important;
+  }
+
+  html,
+  body {
+    background: #fff !important;
+  }
+
+  .editor-container,
+  .editor-wrapper {
+    display: block !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+  }
+
+  /* Dokumen tampil penuh, tanpa bayangan kartu, teks hitam di atas putih. */
+  .editor-inner {
+    box-shadow: none !important;
+    max-width: 100% !important;
+    min-height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .editor-input,
+  .editor-input * {
+    color: #000 !important;
+    background: transparent !important;
+  }
+
+  @page {
+    margin: 2cm;
+  }
+}

@@ -1,0 +1,653 @@
+{
+  "Metadata": {
+    "title": "LiveDocs — Menulis bersama, secara real-time",
+    "description": "LiveDocs adalah editor dokumen kolaboratif real-time. Tulis, beri komentar, dan bagikan dengan tim Anda saat ide itu muncul — tanpa refresh, tanpa konflik versi.",
+    "ogAlt": "Dashboard produk LiveDocs menampilkan dokumen bersama dengan kursor kolaborator secara langsung"
+  },
+  "Landing": {
+    "nav": {
+      "product": "Produk",
+      "resources": "Sumber daya",
+      "useCases": "Kasus penggunaan",
+      "login": "Masuk",
+      "openDashboard": "Dasbor",
+      "getStarted": "Mulai sekarang",
+      "openMenu": "Buka menu",
+      "closeMenu": "Tutup menu",
+      "productItems": {
+        "cursors": "Kursor langsung",
+        "comments": "Komentar berulir",
+        "access": "Berbagi & peran",
+        "dashboard": "Dasbor"
+      },
+      "resourceItems": {
+        "how": "Cara kerja",
+        "privacy": "Privasi & akses",
+        "stack": "Dibangun dengan apa"
+      }
+    },
+    "hero": {
+      "title1": "Menulis bersama,",
+      "title2": "bukan bergiliran",
+      "subtitle": "LiveDocs adalah editor dokumen real-time. Lihat setiap kursor bergerak, tinggalkan komentar tepat di ide-nya, dan tentukan siapa yang boleh mengedit atau hanya membaca.",
+      "ctaPrimary": "Mulai sekarang",
+      "ctaSecondary": "Lihat cara kerjanya"
+    },
+    "mock": {
+      "docTitle": "Brief produk Q4",
+      "saved": "Tersimpan",
+      "share": "Bagikan",
+      "online": "3 online",
+      "role": "Editor",
+      "autosave": "Simpan otomatis",
+      "commentsTitle": "Komentar",
+      "resolved": "Selesai",
+      "p1a": "Onboarding baru rilis bulan Oktober. Tujuannya sederhana: anggota tim baru bisa ",
+      "hl": "menulis dokumen pertamanya kurang dari dua menit",
+      "p1b": ".",
+      "p2": "Yang masih terbuka: teks harga, tampilan kosong, dan siapa yang memegang daftar migrasi.",
+      "p3": "Penanggung jawab migrasi: ",
+      "bubble": "Nah, ini jauh lebih jelas.",
+      "threads": [
+        {
+          "name": "Sari",
+          "time": "2m",
+          "text": "Dua menit terasa ketat. Bisa kita uji ke lima anggota baru dulu?"
+        },
+        {
+          "name": "Budi",
+          "time": "1m",
+          "text": "@Sari setuju, minggu ini aku siapkan ujinya."
+        },
+        {
+          "name": "Anya",
+          "time": "1j",
+          "text": "Typo di bagian pembuka sudah diperbaiki."
+        }
+      ],
+      "reply": "Balas…"
+    },
+    "trust": {
+      "titleStart": "Ruang ",
+      "titleEm": "baru",
+      "titleEnd": " tim kamu untuk berpikir bersama",
+      "kicker": "Dibangun di atas tool yang sudah dipercaya para engineer"
+    },
+    "dashboard": {
+      "badge": "Dasbor",
+      "title": "Semua dokumen, satu dasbor yang tenang",
+      "body": "Cari, filter, dan urutkan semua dokumen milikmu atau yang dibagikan kepadamu, lalu kembali ke ruang langsungnya dengan satu klik.",
+      "docs": [
+        {
+          "title": "Brief produk Q4",
+          "meta": "3 kolaborator · diedit 2 menit lalu"
+        },
+        {
+          "title": "Catatan retro sprint",
+          "meta": "5 kolaborator · diedit kemarin"
+        },
+        {
+          "title": "Checklist peluncuran",
+          "meta": "2 kolaborator · diedit 3 hari lalu"
+        },
+        {
+          "title": "Kerangka skripsi, draf 3",
+          "meta": "Hanya kamu · diedit minggu lalu"
+        },
+        {
+          "title": "Proposal klien",
+          "meta": "Akses viewer · dibagikan oleh Anya"
+        },
+        {
+          "title": "Catatan sinkron mingguan",
+          "meta": "4 kolaborator · diedit hari ini"
+        }
+      ]
+    },
+    "access": {
+      "title": "Setiap peran, setiap bahasa, setiap suasana",
+      "body": "Undang orang sebagai editor atau viewer, ganti antara Inggris dan Bahasa Indonesia, lalu pilih terang atau gelap. Coba kontrol di bingkai bawah ini, semuanya benar-benar berfungsi."
+    },
+    "comments": {
+      "badge": "Komentar",
+      "titleStart": "Komentar yang tetap ",
+      "titleEm": "menempel",
+      "titleEnd": " di idenya",
+      "body": "Pilih teks apa saja, mulai percakapan, sebut rekan timmu. Balasan, penyelesaian, dan notifikasi semuanya terjadi tanpa keluar dari halaman."
+    },
+    "big": {
+      "leftTitle": "Tak perlu lagi tanya “ini versi terbaru?”",
+      "leftBody": "Versinya cuma satu: yang sedang diedit semua orang saat ini. Perubahan tersinkron seketika, jadi tak ada lagi file “final_v3” yang dikirim lewat email atau tertimpa.",
+      "badge": "Platform",
+      "kicker": "Ruang kerja baru tim kamu",
+      "word": "Bareng"
+    },
+    "features": {
+      "cta": "Coba",
+      "items": [
+        {
+          "title": "Kursor langsung & kehadiran",
+          "body": "Lihat siapa yang ada di dokumen dan persis di mana mereka mengetik, jadi tak ada yang saling menimpa."
+        },
+        {
+          "title": "Komentar berulir",
+          "body": "Mulai percakapan di teks mana pun, balas dalam utas, lalu tandai selesai bila sudah beres."
+        },
+        {
+          "title": "Editor atau viewer, per orang",
+          "body": "Undang lewat email, pilih apa yang boleh dilakukan tiap orang, dan ubah atau cabut kapan saja."
+        },
+        {
+          "title": "Mention dan kotak masuk",
+          "body": "@sebut rekan timmu dan pesannya masuk ke notifikasi mereka, bersama undangan dokumen baru."
+        },
+        {
+          "title": "Dua bahasa, dua tema",
+          "body": "Seluruh aplikasi berbahasa Inggris dan Indonesia, terang atau gelap, sesukamu."
+        },
+        {
+          "title": "Privat sejak awal",
+          "body": "Dokumen baru hanya terlihat olehmu. Login lewat Auth.js dan akses dicek per dokumen."
+        }
+      ],
+      "mock": {
+        "mentioned": "menyebutmu",
+        "shared": "membagikan “Checklist peluncuran” kepadamu",
+        "editor": "Editor",
+        "viewer": "Viewer",
+        "only": "Hanya kamu",
+        "invite": "Undang lewat email"
+      }
+    },
+    "useCases": {
+      "badge": "Kasus penggunaan",
+      "title": "Dibuat untuk cara orang benar-benar menulis",
+      "items": [
+        {
+          "label": "Untuk tim produk & engineering",
+          "statement": "Tulis spesifikasi sekali. Semua orang membaca versi yang sama.",
+          "chips": [
+            "Kursor langsung",
+            "Komentar berulir",
+            "Editor atau viewer"
+          ]
+        },
+        {
+          "label": "Untuk mahasiswa & kelompok belajar",
+          "statement": "Bagi tugas laporannya, bukan obrolan grupnya.",
+          "chips": [
+            "Edit real-time",
+            "@mention",
+            "Inggris & Indonesia"
+          ]
+        },
+        {
+          "label": "Untuk freelancer & agensi",
+          "statement": "Bagikan draf ke klien sebagai read-only, dan tarik kembali kapan pun kamu mau.",
+          "chips": [
+            "Akses viewer",
+            "Cabut dalam satu klik",
+            "Privat sejak awal"
+          ]
+        }
+      ]
+    },
+    "steps": {
+      "badge": "Mulai",
+      "title": "Siap menulis dalam tiga langkah",
+      "items": [
+        {
+          "title": "Buat akunmu",
+          "body": "Daftar dalam hitungan detik. Tanpa instalasi, tanpa kartu kredit."
+        },
+        {
+          "title": "Mulai dokumen",
+          "body": "Klik Dokumen Baru. Terbuka sebagai ruang langsung yang hanya bisa kamu lihat."
+        },
+        {
+          "title": "Undang timmu",
+          "body": "Tambahkan rekan lewat email sebagai editor atau viewer. Mereka langsung dapat notifikasi."
+        }
+      ],
+      "rows": [
+        {
+          "title": "Kamu yang menentukan siapa masuk",
+          "body": "Undang lewat email sebagai editor atau viewer, ubah peran kapan saja, dan cabut akses dengan satu klik.",
+          "link": "Lihat cara berbagi"
+        },
+        {
+          "title": "Privat sejak awal",
+          "body": "Dokumen baru hanya terlihat olehmu. Login berjalan di Auth.js dan sinkronisasi real-time di Liveblocks.",
+          "link": "Lihat dibangun dengan apa"
+        }
+      ],
+      "ctaPrimary": "Buat dokumen pertamamu",
+      "ctaSecondary": "Masuk"
+    },
+    "footer": {
+      "tagline": "Dokumen real-time untuk tim yang berpikir bersuara.",
+      "product": "Produk",
+      "resources": "Sumber daya",
+      "account": "Akun",
+      "signIn": "Masuk",
+      "signUp": "Daftar",
+      "documents": "Dokumenmu",
+      "rights": "Hak cipta dilindungi.",
+      "credits": "Lukisan berstatus domain publik, via Wikimedia Commons. Foto dari Pexels.",
+      "creditsLabel": "Kredit karya",
+      "privacyLink": "Privasi",
+      "termsLink": "Ketentuan"
+    }
+  },
+  "Theme": {
+    "light": "Terang",
+    "dark": "Gelap",
+    "system": "Sistem",
+    "toggle": "Ganti tema"
+  },
+  "Language": {
+    "label": "Bahasa",
+    "en": "Inggris",
+    "id": "Indonesia"
+  },
+  "Dashboard": {
+    "documentsSuffix": "Dokumen",
+    "search": "Cari dokumen",
+    "newDocument": "Dokumen baru",
+    "sortRecent": "Terbaru",
+    "sortOldest": "Terlama",
+    "sortName": "Nama",
+    "dateAll": "Sepanjang waktu",
+    "dateToday": "Hari ini",
+    "dateWeek": "Minggu ini",
+    "dateMonth": "Bulan ini",
+    "dateYear": "Tahun ini",
+    "open": "Buka",
+    "empty": "Belum ada dokumen",
+    "emptySubtitle": "Buat dokumen pertama Anda untuk mulai berkolaborasi secara real-time.",
+    "createDocument": "Buat dokumen",
+    "deleting": "Menghapus...",
+    "delete": "Hapus",
+    "creating": "Membuat...",
+    "sortPlaceholder": "Urutkan",
+    "datePlaceholder": "Tanggal",
+    "filterButton": "Filter",
+    "scopeLabel": "Cakupan",
+    "scopeAll": "Semua",
+    "scopeMine": "Milik saya",
+    "scopeShared": "Dibagikan ke saya",
+    "roleOwner": "Pemilik",
+    "roleEditor": "Editor",
+    "roleViewer": "Viewer",
+    "menuRename": "Ganti nama",
+    "renameTitle": "Ganti nama dokumen",
+    "renameSave": "Simpan",
+    "renameCancel": "Batal",
+    "renamed": "Nama diganti.",
+    "searchEmpty": "Tidak ada dokumen yang cocok",
+    "searchEmptySubtitle": "Coba kata kunci lain atau hapus filter.",
+    "clearFilters": "Hapus filter",
+    "errorTitle": "Gagal memuat dokumen",
+    "errorSubtitle": "Ada masalah di sisi server kami.",
+    "retry": "Coba lagi",
+    "chooseIcon": "Pilih ikon",
+    "deleted": "Dihapus permanen.",
+    "restore": "Pulihkan",
+    "deleteForever": "Hapus permanen",
+    "movedToTrash": "Dipindah ke sampah.",
+    "restored": "Dipulihkan.",
+    "scopeStarred": "Disematkan",
+    "scopeTrash": "Sampah",
+    "recentlyOpened": "Baru dibuka",
+    "trashEmpty": "Sampah kosong",
+    "trashEmptySubtitle": "Dokumen yang kamu hapus muncul di sini selama 30 hari sebelum dihapus permanen.",
+    "viewGrid": "Tampilan grid",
+    "viewList": "Tampilan list",
+    "loadMore": "Muat lebih banyak",
+    "loadingMore": "Memuat...",
+    "fromTemplate": "Buat dari template",
+    "template_meeting-notes": "Catatan rapat",
+    "template_meeting-notes_desc": "Peserta, agenda, keputusan, tindak lanjut",
+    "template_project-brief": "Brief proyek",
+    "template_project-brief_desc": "Latar belakang, tujuan, ruang lingkup, linimasa",
+    "template_weekly-report": "Laporan mingguan",
+    "template_weekly-report_desc": "Ringkasan, progres, kendala, rencana minggu depan",
+    "duplicate": "Duplikat",
+    "duplicated": "Dokumen diduplikat.",
+    "copySuffix": "(salinan)",
+    "welcomeKicker": "Ruang kerjamu",
+    "welcome": "Selamat datang kembali, {name}",
+    "welcomeSub": "Lanjutkan dari yang terakhir kamu kerjakan, atau mulai sesuatu yang baru bersama timmu.",
+    "statTotal": "Dokumen",
+    "statShared": "Dibagikan padamu",
+    "statStarred": "Disematkan",
+    "pin": "Sematkan",
+    "unpin": "Lepas sematan"
+  },
+  "DeleteModal": {
+    "title": "Hapus dokumen",
+    "description": "Ini memindahkan dokumen ke sampah. Kamu bisa memulihkannya dalam 30 hari.",
+    "cancel": "Batal",
+    "deleted": "Dipindah ke sampah."
+  },
+  "Editor": {
+    "enterTitle": "Masukkan judul",
+    "viewOnly": "Hanya lihat",
+    "saving": "menyimpan...",
+    "placeholder": "Mulai menulis...",
+    "editTitle": "Ubah judul",
+    "activeCollaborators": "Orang yang sedang melihat dokumen ini",
+    "outlineTitle": "Daftar isi",
+    "outlineEmpty": "Tambahkan heading untuk melihat daftar isi di sini.",
+    "shortcutsTitle": "Pintasan keyboard",
+    "shortcutsHint": "Tekan ? untuk membuka ini kapan saja",
+    "slashHint": "Ketik / untuk perintah",
+    "accessDeniedTitle": "Kamu tidak punya akses ke dokumen ini",
+    "accessDeniedSubtitle": "Minta pemilik membagikan ke emailmu, atau kembali ke daftar dokumenmu.",
+    "backToDocuments": "Kembali ke dokumen",
+    "shortcutBold": "Tebal",
+    "shortcutItalic": "Miring",
+    "shortcutUnderline": "Garis bawah",
+    "shortcutUndo": "Urungkan",
+    "shortcutRedo": "Ulangi",
+    "shortcutSlash": "Sisipkan blok (heading, kutipan...)",
+    "shortcutHelp": "Buka bantuan ini",
+    "exportMarkdown": "Ekspor sebagai Markdown",
+    "exportPdf": "Ekspor sebagai PDF (print)",
+    "versionHistoryTitle": "Riwayat versi",
+    "versionHistoryNote": "Versi disimpan selama 24 jam pada plan saat ini.",
+    "versionHistoryEmpty": "Belum ada versi sebelumnya.",
+    "versionRestore": "Pulihkan versi ini",
+    "versionRestored": "Versi dipulihkan.",
+    "versionRestoreError": "Gagal memulihkan versi ini.",
+    "aiAssistTitle": "Asisten AI",
+    "aiNoSelection": "Pilih teks dulu.",
+    "aiAction_summarize": "Ringkas",
+    "aiAction_fix_grammar": "Perbaiki tata bahasa",
+    "aiAction_continue_writing": "Lanjutkan tulisan",
+    "aiAction_change_tone": "Buat lebih profesional",
+    "toolbarLabel": "Bilah pemformatan",
+    "toolbarUndo": "Urungkan",
+    "toolbarRedo": "Ulangi",
+    "toolbarH1": "Judul 1",
+    "toolbarH2": "Judul 2",
+    "toolbarH3": "Judul 3",
+    "toolbarBulletList": "Daftar berpoin",
+    "toolbarNumberedList": "Daftar bernomor",
+    "toolbarBold": "Tebal",
+    "toolbarItalic": "Miring",
+    "toolbarUnderline": "Garis bawah",
+    "toolbarStrike": "Coret",
+    "toolbarAlignLeft": "Rata kiri",
+    "toolbarAlignCenter": "Rata tengah",
+    "toolbarAlignRight": "Rata kanan",
+    "toolbarAlignJustify": "Rata kiri-kanan"
+  },
+  "Auth": {
+    "signInTitle": "Masuk",
+    "signUpTitle": "Daftar",
+    "nameLabel": "Nama",
+    "namePlaceholder": "Nama lengkap",
+    "emailLabel": "Email",
+    "emailPlaceholder": "kamu@email.com",
+    "passwordLabel": "Password",
+    "passwordPlaceholder": "Minimal 15 karakter",
+    "signInButton": "Masuk",
+    "signUpButton": "Daftar",
+    "signInLoading": "Memproses...",
+    "signUpLoading": "Membuat akun...",
+    "newHereTitle": "Baru di sini?",
+    "newHereBody": "Gabung sekarang dan mulai bikin dokumen kolaboratif bareng tim kamu.",
+    "newHereCta": "Daftar",
+    "oneOfUsTitle": "Sudah punya akun?",
+    "oneOfUsBody": "Selamat datang kembali — lanjutkan kerjaan kamu.",
+    "oneOfUsCta": "Masuk",
+    "errorInvalidCredentials": "Email atau password salah, atau email belum diverifikasi. Terlalu banyak percobaan dapat menjeda login untuk sementara — coba lagi nanti atau atur ulang password.",
+    "errorGeneric": "Ada yang salah. Coba lagi.",
+    "errorRateLimited": "Terlalu banyak percobaan. Silakan coba lagi nanti.",
+    "forgotPasswordLink": "Lupa password?",
+    "checkEmailNotice": "Jika {email} dapat dipakai untuk membuat akun, kami telah mengirim tautan verifikasi. Periksa kotak masuk (dan folder spam) — tautan berlaku 24 jam.",
+    "forgotTitle": "Lupa password",
+    "forgotBody": "Masukkan email Anda dan kami akan mengirim tautan untuk mengatur ulang password.",
+    "forgotSent": "Jika ada akun dengan email tersebut, tautan pengaturan ulang sedang dikirim. Tautan berlaku 1 jam.",
+    "forgotButton": "Kirim tautan reset",
+    "forgotLoading": "Mengirim...",
+    "backToSignIn": "Kembali ke halaman masuk",
+    "resetTitle": "Pilih password baru",
+    "resetBody": "Gunakan minimal {min} karakter. Frasa sandi yang panjang lebih mudah diingat dan lebih kuat daripada password pendek yang rumit.",
+    "newPasswordLabel": "Password baru",
+    "confirmPasswordLabel": "Konfirmasi password baru",
+    "resetButton": "Perbarui password",
+    "resetLoading": "Memperbarui...",
+    "resetDone": "Password Anda sudah diperbarui dan semua sesi lain dikeluarkan. Masuk dengan password baru.",
+    "verifyTitle": "Verifikasi email Anda",
+    "verifyBody": "Konfirmasi alamat email Anda untuk menyelesaikan pembuatan akun.",
+    "verifyButton": "Verifikasi email",
+    "verifyLoading": "Memverifikasi...",
+    "verifyDone": "Email Anda terverifikasi. Sekarang Anda bisa masuk.",
+    "validation": {
+      "email_invalid": "Masukkan alamat email yang valid.",
+      "password_too_short": "Password minimal 15 karakter.",
+      "password_too_long": "Password terlalu panjang (maksimal 128 karakter).",
+      "password_required": "Masukkan password Anda.",
+      "password_blocklisted": "Password itu terlalu mudah ditebak. Pilih yang lain.",
+      "password_contains_identity": "Password tidak boleh memuat nama email Anda atau nama aplikasi.",
+      "password_breached": "Password itu pernah muncul dalam kebocoran data. Pilih password yang lain.",
+      "password_mismatch": "Kedua password tidak sama.",
+      "name_too_short": "Masukkan nama Anda (minimal 2 karakter).",
+      "name_too_long": "Nama terlalu panjang (maksimal 80 karakter).",
+      "token_invalid": "Tautan ini tidak valid atau sudah kedaluwarsa.",
+      "rate_limited": "Terlalu banyak percobaan. Silakan coba lagi nanti.",
+      "invalid_input": "Ada data yang kurang atau tidak valid. Periksa formulir.",
+      "forbidden": "Permintaan ini diblokir. Muat ulang halaman lalu coba lagi."
+    },
+    "signOut": "Keluar",
+    "account": "Akun",
+    "passwordSignInPlaceholder": "Password Anda",
+    "accountSettings": "Pengaturan akun"
+  },
+  "Errors": {
+    "unauthorized": "Silakan masuk lagi untuk melanjutkan.",
+    "forbidden": "Anda tidak memiliki izin untuk melakukan itu.",
+    "not_found": "Dokumen tidak ditemukan.",
+    "invalid_input": "Data tidak valid. Periksa lalu coba lagi.",
+    "rate_limited": "Terlalu banyak percobaan. Tunggu sebentar lalu coba lagi.",
+    "quota_exceeded": "Anda telah mencapai batas untuk aksi ini.",
+    "conflict": "Terjadi konflik dengan kondisi terkini. Muat ulang lalu coba lagi.",
+    "server_error": "Terjadi kesalahan. Silakan coba lagi.",
+    "ai_unavailable": "Asisten AI sedang tidak tersedia."
+  },
+  "Share": {
+    "trigger": "Bagikan",
+    "title": "Atur siapa yang bisa melihat proyek ini",
+    "description": "Pilih pengguna yang boleh melihat dan mengedit dokumen ini",
+    "emailLabel": "Alamat email",
+    "emailPlaceholder": "Masukkan alamat email",
+    "emailInvalid": "Masukkan alamat email yang valid.",
+    "invite": "Undang",
+    "inviting": "Mengirim...",
+    "invited": "{email} diundang.",
+    "removed": "{email} dihapus dari akses.",
+    "canView": "bisa melihat",
+    "canEdit": "bisa mengedit",
+    "accessLevel": "Tingkat akses",
+    "owner": "Pemilik",
+    "remove": "Hapus",
+    "updating": "memperbarui...",
+    "publicAccessTitle": "Siapa saja yang punya akun",
+    "publicAccessDescription": "User LiveDocs yang login dan punya link ini bisa melihat (read-only). Tetap wajib login.",
+    "publicOn": "Siapa saja yang punya akun kini bisa melihat lewat link ini.",
+    "publicOff": "Link akses publik dimatikan."
+  },
+  "Notifications": {
+    "title": "Notifikasi",
+    "unread": "{count} notifikasi belum dibaca",
+    "empty": "Tidak ada notifikasi baru",
+    "mentionedYou": "menyebut Anda.",
+    "accessGranted": "{name} memberi Anda akses {type} ke sebuah dokumen.",
+    "editor": "edit",
+    "viewer": "hanya-lihat",
+    "markAllRead": "Tandai semua dibaca"
+  },
+  "ErrorPage": {
+    "title": "Terjadi kesalahan",
+    "body": "Terjadi kesalahan tak terduga. Anda bisa mencoba lagi.",
+    "retry": "Coba lagi",
+    "home": "Kembali ke beranda"
+  },
+  "NotFound": {
+    "title": "Halaman tidak ditemukan",
+    "body": "Halaman yang Anda cari tidak ada atau sudah dipindahkan.",
+    "home": "Kembali ke beranda"
+  },
+  "Legal": {
+    "back": "Kembali ke beranda",
+    "updated": "Terakhir diperbarui: {date}",
+    "contact": "Ada pertanyaan? Hubungi kami di {email}.",
+    "privacy": {
+      "title": "Kebijakan Privasi",
+      "description": "Cara LiveDocs mengumpulkan, menggunakan, dan melindungi data Anda.",
+      "sections": [
+        {
+          "heading": "Cakupan kebijakan ini",
+          "body": [
+            "LiveDocs adalah editor dokumen kolaboratif real-time. Kebijakan ini menjelaskan data pribadi apa yang kami proses saat Anda menggunakannya, alasannya, dan pilihan yang Anda miliki."
+          ]
+        },
+        {
+          "heading": "Data yang kami proses",
+          "body": [
+            "Data akun: nama, alamat email, dan password yang di-hash (kami tidak pernah menyimpan password dalam bentuk asli).",
+            "Konten yang Anda buat: dokumen, komentar, dan daftar alamat email tempat Anda membagikannya.",
+            "Data teknis: alamat IP dan metadata permintaan untuk keamanan (pembatasan percobaan, pencegahan penyalahgunaan) serta laporan error untuk memperbaiki bug."
+          ]
+        },
+        {
+          "heading": "Tujuan penggunaan",
+          "body": [
+            "Menyediakan layanan: memasukkan Anda ke akun, menyinkronkan dokumen secara real-time, dan mengirim undangan serta notifikasi.",
+            "Menjaga keamanan layanan: membatasi percobaan login berulang dan mendeteksi penyalahgunaan.",
+            "Mengirim email transaksional saja: verifikasi email, reset password, dan pemberitahuan keamanan. Kami tidak mengirim email pemasaran."
+          ]
+        },
+        {
+          "heading": "Penyedia layanan",
+          "body": [
+            "Kami memakai penyedia tepercaya untuk menjalankan LiveDocs: Liveblocks (kolaborasi real-time dan penyimpanan dokumen), MongoDB (basis data akun), penyedia pengiriman email (email transaksional), Sentry (pemantauan error, dikonfigurasi tanpa data pribadi secara default), dan penyedia hosting kami. Mereka memproses data atas nama kami dan hanya untuk tujuan tersebut."
+          ]
+        },
+        {
+          "heading": "Cookie",
+          "body": [
+            "Kami hanya memakai cookie dan penyimpanan yang benar-benar diperlukan: cookie sesi agar Anda tetap masuk, serta preferensi tema dan bahasa. Kami tidak memakai cookie iklan atau pelacakan lintas situs."
+          ]
+        },
+        {
+          "heading": "Retensi dan penghapusan",
+          "body": [
+            "Kami menyimpan akun dan dokumen Anda sampai Anda meminta penghapusan. Pendaftaran yang belum diverifikasi kedaluwarsa dalam 24 jam dan tautan reset password dalam 1 jam."
+          ]
+        },
+        {
+          "heading": "Hak Anda",
+          "body": [
+            "Anda dapat meminta akses, koreksi, ekspor, atau penghapusan data pribadi kapan saja. Tergantung lokasi Anda, Anda juga dapat berhak menolak atau membatasi pemrosesan tertentu."
+          ]
+        },
+        {
+          "heading": "Keamanan",
+          "body": [
+            "Kami melindungi data dengan enkripsi saat transit (HTTPS), hashing password modern (Argon2id), kontrol akses pada setiap dokumen, dan pembatasan percobaan. Tidak ada sistem yang sepenuhnya aman, jadi gunakan password yang kuat dan unik."
+          ]
+        },
+        {
+          "heading": "Perubahan",
+          "body": [
+            "Kami dapat memperbarui kebijakan ini. Bila ada perubahan penting, tanggal di atas akan diperbarui."
+          ]
+        }
+      ]
+    },
+    "terms": {
+      "title": "Ketentuan Layanan",
+      "description": "Aturan penggunaan LiveDocs.",
+      "sections": [
+        {
+          "heading": "Persetujuan",
+          "body": [
+            "Dengan membuat akun atau menggunakan LiveDocs, Anda menyetujui ketentuan ini. Jika tidak setuju, mohon jangan gunakan layanan ini."
+          ]
+        },
+        {
+          "heading": "Akun Anda",
+          "body": [
+            "Berikan informasi yang akurat, verifikasi email, dan jaga kerahasiaan password. Anda bertanggung jawab atas aktivitas di akun Anda. Segera beri tahu kami bila Anda curiga ada akses tanpa izin."
+          ]
+        },
+        {
+          "heading": "Konten Anda",
+          "body": [
+            "Anda memiliki dokumen dan komentar yang Anda buat. Anda mengizinkan kami menyimpan, memproses, dan menampilkannya hanya sejauh diperlukan untuk menjalankan layanan. Anda menentukan siapa yang dapat melihat atau mengedit tiap dokumen; Anda bertanggung jawab atas orang yang Anda beri akses."
+          ]
+        },
+        {
+          "heading": "Penggunaan yang wajar",
+          "body": [
+            "Jangan gunakan LiveDocs untuk melanggar hukum, melanggar hak orang lain, menyebarkan malware, atau melecehkan orang lain. Jangan mencoba melewati keamanan atau pembatasan percobaan, menyelidiki akun pengguna lain, atau mengganggu layanan."
+          ]
+        },
+        {
+          "heading": "Ketersediaan",
+          "body": [
+            "Kami berupaya menjaga LiveDocs tetap tersedia dan data Anda aman, tetapi layanan disediakan \"apa adanya\" tanpa jaminan beroperasi tanpa gangguan. Simpan cadangan dokumen penting Anda sendiri."
+          ]
+        },
+        {
+          "heading": "Penghentian",
+          "body": [
+            "Anda dapat berhenti menggunakan LiveDocs dan meminta penghapusan akun kapan saja. Kami dapat menangguhkan akun yang melanggar ketentuan ini."
+          ]
+        },
+        {
+          "heading": "Batasan tanggung jawab",
+          "body": [
+            "Sejauh diizinkan hukum, LiveDocs tidak bertanggung jawab atas kerugian tidak langsung atau konsekuensial yang timbul dari penggunaan layanan."
+          ]
+        },
+        {
+          "heading": "Perubahan",
+          "body": [
+            "Kami dapat memperbarui ketentuan ini. Melanjutkan penggunaan LiveDocs setelah pembaruan berarti Anda menerima ketentuan baru."
+          ]
+        }
+      ]
+    }
+  },
+  "Account": {
+    "title": "Pengaturan akun",
+    "backToDocuments": "Kembali ke dokumen",
+    "profileTitle": "Profil",
+    "save": "Simpan",
+    "profileSaved": "Nama diperbarui.",
+    "passwordTitle": "Password",
+    "passwordNote": "Mengganti password akan mengeluarkanmu dari perangkat ini juga — kamu perlu login ulang.",
+    "currentPassword": "Password saat ini",
+    "newPassword": "Password baru",
+    "changePassword": "Ganti password",
+    "passwordChanged": "Password diganti. Silakan login ulang.",
+    "logoutAllTitle": "Keluar dari semua perangkat",
+    "logoutAllNote": "Keluar dari semua perangkat, termasuk yang ini.",
+    "logoutAllButton": "Keluar dari semua perangkat",
+    "deleteTitle": "Hapus akun",
+    "deleteNote": "Menghapus akunmu secara permanen beserta semua dokumen yang kamu miliki. Tidak bisa dibatalkan.",
+    "deleteButton": "Hapus akun saya",
+    "deleteConfirmTitle": "Hapus akunmu?",
+    "deleteConfirmBody": "Ini menghapus akunmu secara permanen beserta semua dokumen yang kamu miliki. Masukkan password untuk konfirmasi.",
+    "deleteCancel": "Batal",
+    "deleteConfirmButton": "Hapus permanen"
+  },
+  "Common": {
+    "close": "Tutup",
+    "loading": "Memuat"
+  }
+}
