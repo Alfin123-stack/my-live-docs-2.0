@@ -1,0 +1,25 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="512" y2="512" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#7c5cff"/>
+      <stop offset="1" stop-color="#4322c9"/>
+    </linearGradient>
+  </defs>
+
+  <rect x="0" y="0" width="512" height="512" rx="112" fill="url(#bg)"/>
+
+  <!-- Halaman dokumen, disederhanakan agar tetap jelas di 16px -->
+  <path d="M172 112 H296 L360 176 V400 A20 20 0 0 1 340 420 H172 A20 20 0 0 1 152 400 V132 A20 20 0 0 1 172 112 Z"
+        fill="#f7f5ff"/>
+  <path d="M296 112 L360 176 H316 A20 20 0 0 1 296 156 Z" fill="#c9b8ff"/>
+
+  <!-- Dua baris teks tebal, kontras tinggi -->
+  <rect x="196" y="240" width="132" height="26" rx="13" fill="#6d4bff"/>
+  <rect x="196" y="292" width="92" height="26" rx="13" fill="#b3a2ff"/>
+
+  <!-- Kursor kolaborator, diperbesar -->
+  <g transform="translate(322,318)">
+    <circle r="58" fill="#3a1ec9" stroke="#f7f5ff" stroke-width="8"/>
+    <path d="M-20 -25 L23 2 L4 8 L-6 27 Z" fill="#ffffff"/>
+  </g>
+</svg>
