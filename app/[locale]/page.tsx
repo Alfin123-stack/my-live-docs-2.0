@@ -9,7 +9,6 @@ import { JsonLd } from "@/components/JsonLd";
 import { LandingRoot } from "@/components/landing/LandingRoot";
 import { LandingNav } from "@/components/landing/LandingNav";
 import { Hero } from "@/components/landing/Hero";
-import { TrustStrip } from "@/components/landing/TrustStrip";
 import { DashboardShowcase } from "@/components/landing/DashboardShowcase";
 import { AccessSection } from "@/components/landing/AccessSection";
 import { CommentsSection } from "@/components/landing/CommentsSection";
@@ -100,7 +99,6 @@ export default async function LandingPage({ params }: Props) {
       <main id="main" className="overflow-x-clip bg-canvas font-body">
         <LandingNav />
         <Hero />
-        <TrustStrip />
         <DashboardShowcase />
         <AccessSection />
         <CommentsSection />
